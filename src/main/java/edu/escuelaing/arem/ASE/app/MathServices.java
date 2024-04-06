@@ -1,6 +1,9 @@
 package edu.escuelaing.arem.ASE.app;
-import java.util.ArrayList;
+
 import static spark.Spark.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MathServices {
     public static void main(String[] args){
@@ -8,53 +11,26 @@ public class MathServices {
         port(getPort());
         get("/linealSearch", (req, res) -> {
             res.type("application/json");
-            int n = Integer.parseInt(req.queryParams("value"));
-            String result = "{\"operation\":\"factors\",\"input\":\"" + n + "\", \"output\":\"";
-            //ArrayList<Integer> factorsToAdd = factors(n);
-            /*for (int i = 0; i < factorsToAdd.size(); i++) {
-                if (i != factorsToAdd.size()-1) {
-                    result += factorsToAdd.get(i) + ", ";
-                } else {
-                    result += factorsToAdd.get(i);
-                }
-            }*/
-            result += "\"}";
-            return result;
+            String inputListStr = req.queryParams("list");
+            int[] inputList = Arrays.stream(inputListStr.split(","))
+                    .mapToInt(Integer::parseInt)
+                    .toArray();
+            int target = Integer.parseInt(req.queryParams("value"));
+            int index = linealSearch(inputList, target);
+            return "{\"operation\":\"linealSearch\", \"inputlist\":\"" + inputListStr + "\", \"value\":\"" + target + "\", \"output\":\"" + index + "\"}";
         });
-        
+
         get("/binarySearch", (req, res) -> {
             res.type("application/json");
-            int n = Integer.parseInt(req.queryParams("value"));
-            String result = "{\"operation\":\"factors\",\"input\":\"" + n + "\", \"output\":\"";
-            result += "\"}";
-            return result;
+            String inputListStr = req.queryParams("list");
+            int[] inputList = Arrays.stream(inputListStr.split(","))
+                    .mapToInt(Integer::parseInt)
+                    .toArray();
+            int target = Integer.parseInt(req.queryParams("value"));
+            int index = binarySearch(inputList, target);
+            return "{\"operation\":\"binarySearch\", \"inputlist\":\"" + inputListStr + "\", \"value\":\"" + target + "\", \"output\":\"" + index + "\"}";
         });
-        
-        /*port(getPort());
-        get("/linealSearch", (req, res) -> {
-            list lista = r
-            res.type("application/json");
-            return " return \"{\\\"message\\\":\\\"Custom 500 handling\\\"}\";";
 
-            lista
-            [1,3,4,5,6,7] [8,9,10,11,12]
-            indices
-            [0,1,2,3,4,5]
-
-            int argumento = 3;
-
-            for (int i = 0; i < lista.length(); i++) {
-                if (argumento == lista[i]){
-                    respuesta = i;
-                } else if (i == lista.length()) {
-                    respuesta = -1;
-                }
-            }
-            return respuesta;
-
-        });*/
-
-        
 
 
 
@@ -65,5 +41,29 @@ public class MathServices {
             return Integer.parseInt(System.getenv("PORT"));
         }
         return 4567;
+    }
+    private static int binarySearch(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    private static int linealSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

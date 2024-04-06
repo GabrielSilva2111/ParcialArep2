@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>algoritmos</title>
+    <title>Algoritmos</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<h1>Algoritmos de busqueda </h1>
-<form>
-    <label for="linealSearch">linealSearch:</label><br>
-    <input type="text" id="linealSearch" name="linealSearch" value=""><br><br>
-    <input type="button" value="Calculate LinealSearch" onclick="loadGetLinealSearchMsg()">
-</form>
-<form>
-    <label for="BinarySearch">BinarySearch:</label><br>
-    <input type="text" id="BinarySearch" name="BinarySearch" value=""><br><br>
-    <input type="button" value="Calculate BinarySearch" onclick="loadGetBinarySearchMsg()">
+<h1>Algoritmos de búsqueda</h1>
+<form id="linealSearchForm">
+    <label for="list">Lista:</label><br>
+    <input type="text" id="linealList" name="list" value=""><br><br>
+    <label for="value">Valor a buscar:</label><br>
+    <input type="text" id="linealvalue" name="value" value=""><br><br>
+    <input type="button" value="Buscar con LinealSearch" onclick="loadLinealSearch()">
 </form>
 
+<form id="binarySearchForm">
+    <label for="list">Lista:</label><br>
+    <input type="text" id="binaryList" name="list" value=""><br><br>
+    <label for="value">Valor a buscar:</label><br>
+    <input type="text" id="binaryValue" name="value" value=""><br><br>
+    <input type="button" value="Buscar con BinarySearch" onclick="loadBinarySearch()">
+</form>
 
-<div id="getrespmsg"></div>
+<div id="response"></div>
 
 <script src="scripts.js"></script>
-
 </body>
 </html>

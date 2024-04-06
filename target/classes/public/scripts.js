@@ -1,25 +1,25 @@
 
 
-//Scripts que me traen la información correspondiente del get en LinealSearch
- function loadGetLinealSearchMsg() {
-    let nameVar = document.getElementById("linealSearch").value;
+// Función para obtener la respuesta de la búsqueda lineal
+function loadLinealSearch() {
+    let list = document.getElementById("linealList").value;
+    let value = document.getElementById("linealvalue").value;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-           document.getElementById("getrespmsg").innerHTML =
-           this.responseText;
+        document.getElementById("response").innerHTML = this.responseText;
     };
-    xhttp.open("GET", "/linealSearch?value="+nameVar);
+    xhttp.open("GET", "/linealSearch?list=" + list + "&value=" + value);
     xhttp.send();
 }
 
-//Scripts que me traen la información correspondiente del get en BynarySearch
- function loadGetBinarySearchMsg() {
-    let nameVar = document.getElementById("BinarySearch").value;
+// Función para obtener la respuesta de la búsqueda binaria
+function loadBinarySearch() {
+    let list = document.getElementById("binaryList").value;
+    let value = document.getElementById("binaryValue").value;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-           document.getElementById("getrespmsg").innerHTML =
-           this.responseText;
+        document.getElementById("response").innerHTML = this.responseText;
     };
-    xhttp.open("GET", "/BinarySearch?value="+nameVar);
+    xhttp.open("GET", "/binarySearch?list=" + list + "&value=" + value);
     xhttp.send();
 }

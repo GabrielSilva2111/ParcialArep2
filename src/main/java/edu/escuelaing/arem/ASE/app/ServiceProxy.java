@@ -13,17 +13,22 @@ public class ServiceProxy {
         urlServices[0] = args[0];
         //urlServices[1] = args[1];
         port(getPort());
+
         get("/linealSearch", (req, res) -> {
             res.type("application/json");
-            int n = Integer.parseInt(req.queryParams("value"));
-            return HttpConnectionExample.makeGet(urlServices[0]+ "/linealSearch?value=" + n);
+            String list = req.queryParams("list");
+            String value = req.queryParams("value");
+            return HttpConnectionExample.makeGet(urlServices[0]+ "/linealSearch?list="  + list + "&value=" + value);
         });
 
         get("/binarySearch", (req, res) -> {
             res.type("application/json");
-            int n = Integer.parseInt(req.queryParams("value"));
-            return HttpConnectionExample.makeGet(urlServices[0]+ "/binarySearch?value=" + n);
+            String list = req.queryParams("list");
+            String value = req.queryParams("value");
+            return HttpConnectionExample.makeGet(urlServices[0] + "/binarySearch?list=" + list + "&value=" + value);
         });
+
+
         
     }
     
