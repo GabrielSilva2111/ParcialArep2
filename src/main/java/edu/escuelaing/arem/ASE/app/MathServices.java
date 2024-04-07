@@ -36,13 +36,13 @@ public class MathServices {
 
     }
 
-    private static int getPort() {
+    public static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
         return 4567;
     }
-    private static int binarySearch(int[] arr, int target) {
+    public static int binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
         while (left <= right) {
@@ -58,7 +58,7 @@ public class MathServices {
         return -1;
     }
 
-    private static int linealSearch(int[] arr, int target) {
+    public static int linealSearch(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
                 return i;
