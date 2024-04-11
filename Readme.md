@@ -40,6 +40,7 @@ Clone el repositorio del proyecto y compile el código:
 En cada instancia EC2, ejecute los siguientes comandos para iniciar los servicios:
 
 - **ServicioOne y ServicioTwo**:
+![imagen.jpg](imagenes/imagen3.jpg)
 ![imagen.jpg](imagenes/imagen2.jpg)
 
 
