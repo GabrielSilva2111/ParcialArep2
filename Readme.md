@@ -40,15 +40,15 @@ Clone el repositorio del proyecto y compile el código:
 En cada instancia EC2, ejecute los siguientes comandos para iniciar los servicios:
 
 - **ServicioOne y ServicioTwo**:
-![imagen.jpg](imagenes/imagen3.jpg)
-![imagen.jpg](imagenes/imagen2.jpg)
+![imagen3.jpg](Imagenes/imagen3.jpg)
+![imagen2.jpg](Imagenes/imagen2.jpg)
 
 
 `java -cp "target/classes:target/dependency/*" edu.escuelaing.arem.ASE.app.MathServices`
 
 - **ProxyServer**:
 
-![imagen1.jpg](imagenes/imagen1.jpg)
+![imagen1.jpg](Imagenes/imagen1.jpg)
 
   `java -cp "target/classes:target/dependency/*" edu.escuelaing.arem.ASE.app.ServiceProxy http://ec2-174-129-178-111.compute-1.amazonaws.com:4567 http://ec2-54-167-228-120.compute-1.amazonaws.com:4567`
   Reemplace las URL con los DNS de las instancias correspondientes.
@@ -59,21 +59,21 @@ En cada instancia EC2, ejecute los siguientes comandos para iniciar los servicio
 las siguientes pruebas Son para probar los servicios BinarySearch y LinealSearch
 - **Lineal Search**
 
-![imagen4.jpg](imagenes/imagen4.jpg)
+![imagen4.jpg](Imagenes/imagen4.jpg)
 
-![imagen6.jpg](imagenes/imagen6.jpg)
+![imagen6.jpg](Imagenes/imagen6.jpg)
 - **Bynary Search**
 
-![imagen7.jpg](imagenes/imagen7.jpg)
+![imagen7.jpg](Imagenes/imagen7.jpg)
 
-![imagen8.jpg](imagenes/imagen8.jpg)
+![imagen8.jpg](Imagenes/imagen8.jpg)
 
 ### Arquitectura
 este diagrama muestra cómo los clientes interactúan con 
 el sistema a través del Service Proxy, que a su vez coordina las 
 solicitudes con los MathServices correspondientes. Esto permite una arquitectura escalable y flexible que puede manejar diferentes tipos de solicitudes de búsqueda de manera eficiente.
 
-![imagen5.jpg](imagenes/imagen5.jpg)
+![imagen5.jpg](imagenes/Imagen5.jpg)
 
 
 ### Video Demostración:
