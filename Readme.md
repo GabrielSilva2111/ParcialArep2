@@ -41,6 +41,7 @@ En cada instancia EC2, ejecute los siguientes comandos para iniciar los servicio
 
 - **ServicioOne y ServicioTwo**:
 ![imagen3.jpg](Imagenes/imagen3.jpg)
+
 ![imagen2.jpg](Imagenes/imagen2.jpg)
 
 
@@ -48,7 +49,7 @@ En cada instancia EC2, ejecute los siguientes comandos para iniciar los servicio
 
 - **ProxyServer**:
 
-![imagen1.jpg](Imagenes/imagen1.jpg)
+![imagen1.jpg](Imagenes/Imagen1.jpg)
 
   `java -cp "target/classes:target/dependency/*" edu.escuelaing.arem.ASE.app.ServiceProxy http://ec2-174-129-178-111.compute-1.amazonaws.com:4567 http://ec2-54-167-228-120.compute-1.amazonaws.com:4567`
   Reemplace las URL con los DNS de las instancias correspondientes.
@@ -73,7 +74,7 @@ este diagrama muestra cómo los clientes interactúan con
 el sistema a través del Service Proxy, que a su vez coordina las 
 solicitudes con los MathServices correspondientes. Esto permite una arquitectura escalable y flexible que puede manejar diferentes tipos de solicitudes de búsqueda de manera eficiente.
 
-![imagen5.jpg](imagenes/Imagen5.jpg)
+![imagen5.jpg](Imagenes/imagen5.jpg)
 
 
 ### Video Demostración:
